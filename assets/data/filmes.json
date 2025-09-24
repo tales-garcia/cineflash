@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "Avatar 3",
+        "genres": "Ficção Científica, Aventura, Ação",
+        "director": "James Cameron",
+        "synopsis": "Jake Sully e Neytiri continuam sua luta para proteger sua família e o povo Na'vi de uma nova e devastadora ameaça que ressurge do passado, explorando novos e perigosos territórios de Pandora.",
+        "posterUrl": "assets/images/avatar3.jpeg",
+        "youtubeId": "_d-gYzzN72o"
+    },
+    {
+        "id": 2,
+        "title": "A Longa Marcha - Caminhe Ou Morra",
+        "genres": "Suspense",
+        "director": "Francis Lawrence",
+        "synopsis": "Em um futuro distópico, 100 jovens participam de uma competição brutal na qual só um pode sobreviver. A cada passo, a tensão aumenta. A Longa Marcha é uma adaptação eletrizante da obra de Stephen King.",
+        "posterUrl": "assets/images/alongamarcha.png",
+        "youtubeId": "CC9Eww-YhLY"
+    },
+    {
+        "id": 3,
+        "title": "Quarteto Fantástico - Primeiros Passos",
+        "genres": "Ação, Fantasia",
+        "director": "Matt Shakman",
+        "synopsis": "Forçados a equilibrar seus papéis como heróis com a força dos laços familiares que os unem, eles devem defender a Terra de um voraz deus espacial chamado Galactus e seu enigmático arauto, a Surfista Prateada. E, se o plano de Galactus de devorar o planeta inteiro já não fosse ruim o suficiente, tudo fica ainda mais pessoal.",
+        "posterUrl": "assets/images/quartetofantastico.png",
+        "youtubeId": "I2_xLKRXcQM"
+    },
+    {
+        "id": 4,
+        "title": "Animais Perigosos",
+        "genres": "Terror",
+        "director": "Sean Byrne",
+        "synopsis": "Em ANIMAIS PERIGOSOS, a vida da surfista Zephyr vira um pesadelo quando ela é sequestrada por Tucker, um serial killer obcecado por tubarões. A jovem é mantida em cativeiro em um barco com outra mulher e precisa descobrir como escapar, em uma corrida contra o tempo, antes que seja devorada por tubarões famintos em alto mar.",
+        "posterUrl": "assets/images/animaisperigosos.png",
+        "youtubeId": "_lJ5NfbM6fo"
+    },
+    {
+        "id": 5,
+        "title": "Tron: Ares",
+        "genres": "Ficção Científica, Ação",
+        "director": "Joachim Rønning",
+        "synopsis": "Um programa de computador altamente sofisticado, Ares, é enviado do mundo digital para o mundo real em uma missão perigosa, marcando o primeiro encontro da humanidade com seres de IA.",
+        "posterUrl": "assets/images/tronares.png",
+        "youtubeId": "LJGp3FYxE0U"
+    },
+    {
+        "id": 6,
+        "title": "Invocação do Mal 4",
+        "genres": "Terror, Suspense, Sobrenatural",
+        "director": "Michael Chaves",
+        "synopsis": "Ed e Lorraine Warren enfrentam seu caso mais aterrorizante e pessoal até agora, quando uma investigação os leva a confrontar uma entidade demoníaca que os força a reviver seus piores medos.",
+        "posterUrl": "assets/images/invocacaodomal.png",
+        "youtubeId": "PK36Lr7dJU8"
+    },
+    {
+        "id": 7,
+        "title": "M3GAN 2.0",
+        "genres": "Terror, Ficção Científica, Suspense",
+        "director": "Gerard Johnstone",
+        "synopsis": "M3GAN, a maravilha da inteligência artificial, retorna de formas inesperadas, explorando novas vulnerabilidades na tecnologia que nos rodeia e levando seu instinto protetor a novos e aterrorizantes extremos.",
+        "posterUrl": "assets/images/megan.png",
+        "youtubeId": "kX8yjM09qLQ"
+    },
+    {
+        "id": 8,
+        "title": "Como Treinar o Seu Dragão",
+        "genres": "Aventura, Fantasia, Família",
+        "director": "Dean DeBlois",
+        "synopsis": "A aclamada animação ganha vida em uma adaptação live-action, recontando a história do jovem viking Soluço, que desafia as tradições de sua tribo ao fazer amizade com seu inimigo: um temível dragão Fúria da Noite.",
+        "posterUrl": "assets/images/comotreinarseudragao.png",
+        "youtubeId": "HIbwgbbJzSs"
+    },
+    {
+        "id": 9,
+        "title": "Superman",
+        "genres": "Ação, Super-herói, Aventura",
+        "director": "James Gunn",
+        "synopsis": "Uma nova visão do Homem de Aço que busca equilibrar sua herança kryptoniana com sua criação humana. Superman embarca em uma jornada para reconciliar suas origens com o dever de servir como um farol de esperança para a humanidade.",
+        "posterUrl": "assets/images/superman.png",
+        "youtubeId": "Ox8ZLF6cGM0"
+    },
+    {
+        "id": 10,
+        "title": "Capitão América: Admirável Mundo Novo",
+        "genres": "Ação, Super-herói, Suspense",
+        "director": "Julius Onah",
+        "synopsis": "Sam Wilson assume definitivamente o escudo e o manto do Capitão América, enfrentando uma ameaça global que o força a montar uma nova equipe e a questionar o verdadeiro significado de lutar por seu país.",
+        "posterUrl": "assets/images/capitaoamerica.jpg",
+        "youtubeId": "SCqjO_6HWuk"
+    },
+    {
+        "id": 11,
+        "title": "Karatê Kid: Lendas",
+        "genres": "Ação, Drama, Artes Marciais",
+        "director": "Jonathan Entwistle",
+        "synopsis": "Unindo o legado dos filmes anteriores, esta nova história traz um jovem da China que encontra força e direção através das artes marciais, guiado por um mentor rígido mas sábio, conectando gerações de lutadores.",
+        "posterUrl": "assets/images/karatekid.png",
+        "youtubeId": "n-BJtlVnAes"
+    },
+    {
+        "id": 12,
+        "title": "Formula 1",
+        "genres": "Ação, Drama, Esporte",
+        "director": "Joseph Kosinski",
+        "synopsis": "Um ex-piloto de Fórmula 1 retorna às pistas para ser o mentor de um jovem e promissor piloto em uma equipe novata, enfrentando os gigantes do esporte em uma batalha por velocidade e redenção.",
+        "posterUrl": "assets/images/f1.png",
+        "youtubeId": "WKLMXlodrHw"
+    }
+]

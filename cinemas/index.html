@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Cinemas - CINEFLASH</title>
+
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header scrolled">
+        <nav class="navbar">
+            <a href="../" class="logo">
+                <img src="../assets/images/favicon.png" alt="CINEFLASH Logo">
+                CINEFLASH
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/filmes/" class="nav-link"><i class="fa-solid fa-film"></i>Filmes</a></li>
+                <li><a href="/cinemas/" class="nav-link"><i class="fa-solid fa-location-dot"></i>Cinemas</a></li>
+                <li><a href="/sobre/" class="nav-link"><i class="fa-solid fa-circle-info"></i>Sobre</a></li>
+                <li><a href="/contato/" class="nav-link"><i class="fa-solid fa-envelope"></i>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cinemas-container">
+        <div class="cinemas-header">
+            <h1>Nossas Unidades</h1>
+            <p>Encontre a sala CINEFLASH mais perto de você.</p>
+        </div>
+        
+        <div id="cinemas-list" class="cinemas-grid">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 CINEFLASH. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../assets/js/cinemas.js"></script>
+</body>
+</html>

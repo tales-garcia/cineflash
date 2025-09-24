@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "CINEFLASH ParkShopping",
+        "address": "SMAS Trecho 1 - SIN, Brasília - DF",
+        "phone": "(61) 3362-1300",
+        "mapsLink": "https://www.google.com/maps/place/ParkShopping+Brasília",
+        "imageUrl": "assets/images/parkshopping.jpg"
+    },
+    {
+        "id": 2,
+        "name": "CINEFLASH Conjunto Nacional",
+        "address": "SDN CNB - Conjunto A, Asa Norte, Brasília - DF",
+        "phone": "(61) 2106-9700",
+        "mapsLink": "https://www.google.com/maps/place/Shopping+Conjunto+Nacional",
+        "imageUrl": "assets/images/conjuntonacional.jpg"
+    },
+    {
+        "id": 3,
+        "name": "CINEFLASH Iguatemi",
+        "address": "SHIN CA 4, Lago Norte, Brasília - DF",
+        "phone": "(61) 3577-5000",
+        "mapsLink": "https://www.google.com/maps/place/Iguatemi+Grand+Vraiment",
+        "imageUrl": "assets/images/iguatemi.jpg"
+    },
+    {
+        "id": 4,
+        "name": "CINEFLASH Taguatinga Shopping",
+        "address": "QS 01, Lote 40, Pistão Sul, Taguatinga - DF",
+        "phone": "(61) 3451-6000",
+        "mapsLink": "https://www.google.com/maps/place/Taguatinga+Shopping",
+        "imageUrl": "assets/images/taguatingashopping.jpg"
+    }
+]
