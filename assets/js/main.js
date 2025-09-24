@@ -3,6 +3,17 @@ $(function() {
     fetch('../assets/data/filmes.json')
         .then(response => response.json())
         .then(movies => {
+            const featuredMovieId = 6;
+            const featuredMovie = movies.find(m => m.id === featuredMovieId);
+
+            if (featuredMovie) {
+                $('#featured-title').text(featuredMovie.title);
+                $('#featured-synopsis').text(featuredMovie.synopsis);
+                $('#featured-details-link').attr('href', `detalhes/?id=${featuredMovie.id}`);
+                const trailerUrl = `https://www.youtube.com/embed/${featuredMovie.youtubeId}`;
+                $('#featured-iframe').attr('src', trailerUrl);
+            }
+
             const $moviesGrid = $('.movies-grid');
 
             $.each(movies, function(index, movie) {
