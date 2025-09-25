@@ -149,7 +149,14 @@ ul {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease-in-out;
+}
+
+.movie-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .movie-card:hover {
@@ -617,5 +624,90 @@ ul {
 
     .featured-info {
         text-align: center;
+    }
+}
+
+.lists-section {
+    padding: 4rem 5%;
+    background-color: black;
+}
+
+.lists-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.top-movies-list h2,
+.genres-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.top-movies-list ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.top-movies-list li {
+    background-color: var(--secondary-dark-color);
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.top-movies-list li:hover {
+    background-color: var(--primary-color);
+}
+
+.genres-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.genre-card {
+    background-color: var(--secondary-dark-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.genre-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.genre-card ul {
+    list-style-type: none;
+}
+
+.genre-card li {
+    margin-bottom: 0.75rem;
+    color: var(--gray-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.genre-card li::before {
+    content: '\f145';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-right: 0.75rem;
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+    .lists-container {
+        grid-template-columns: 1fr;
     }
 }
