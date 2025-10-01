@@ -3,18 +3,19 @@ $(function() {
     fetch('../assets/data/filmes.json')
         .then(response => response.json())
         .then(movies => {
-            populateFeaturedTrailer(movies);
-            populateMoviesGrid(movies);
-            populateTop5List(movies);
-            populateGenresList(movies);
+            initCarousel(movies)
+            populateFeaturedTrailer(movies)
+            populateMoviesGrid(movies)
+            populateTop5List(movies)
+            populateGenresList(movies)
         })
         .catch(error => {
-            console.error('Erro ao carregar os dados dos filmes:', error);
-            $('.movies-grid').html('<p class="error-message">Não foi possível carregar os filmes. Tente novamente mais tarde.</p>');
-        });
+            console.error('Erro ao carregar os dados dos filmes:', error)
+            $('.movies-grid').html('<p class="error-message">Não foi possível carregar os filmes. Tente novamente mais tarde.</p>')
+        })
 
     function populateMoviesGrid(movies) {
-        const $moviesGrid = $('.movies-grid');
+        const $moviesGrid = $('.movies-grid')
 
         $.each(movies, function(index, movie) {
             const movieCardHTML = `
@@ -26,45 +27,45 @@ $(function() {
                         <a href="detalhes/?id=${movie.id}" class="btn-secondary">Ver Detalhes</a>
                     </div>
                 </div>
-            `;
-            $moviesGrid.append(movieCardHTML);
+            `
+            $moviesGrid.append(movieCardHTML)
         });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    $(entry.target).addClass('visible');
-                    observer.unobserve(entry.target);
+                    $(entry.target).addClass('visible')
+                    observer.unobserve(entry.target)
                 }
-            });
+            })
         }, {
             threshold: 0.1
-        });
+        })
         
         $('.movie-card').each(function() {
-            observer.observe(this);
-        });
+            observer.observe(this)
+        })
     }
 
     function populateFeaturedTrailer(movies) {
-        const featuredMovieId = 6;
-        const featuredMovie = movies.find(m => m.id === featuredMovieId);
+        const featuredMovieId = 6
+        const featuredMovie = movies.find(m => m.id === featuredMovieId)
 
         if (featuredMovie) {
-            $('#featured-title').text(featuredMovie.title);
-            $('#featured-synopsis').text(featuredMovie.synopsis);
-            $('#featured-details-link').attr('href', `detalhes/?id=${featuredMovie.id}`);
-            const trailerUrl = `https://www.youtube.com/embed/${featuredMovie.youtubeId}`;
-            $('#featured-iframe').attr('src', trailerUrl);
+            $('#featured-title').text(featuredMovie.title)
+            $('#featured-synopsis').text(featuredMovie.synopsis)
+            $('#featured-details-link').attr('href', `detalhes/?id=${featuredMovie.id}`)
+            const trailerUrl = `https://www.youtube.com/embed/${featuredMovie.youtubeId}`
+            $('#featured-iframe').attr('src', trailerUrl)
         }
     }
 
     function populateTop5List(movies) {
-        const topMovies = movies.slice(0, 5);
-        const $top5List = $('#top-5-list');
+        const topMovies = movies.slice(0, 5)
+        const $top5List = $('#top-5-list')
         $.each(topMovies, function(index, movie) {
-            $top5List.append(`<li>${movie.title}</li>`);
-        });
+            $top5List.append(`<li>${movie.title}</li>`)
+        })
     }
 
     function populateGenresList(movies) {
@@ -74,7 +75,7 @@ $(function() {
             'aventura': $('#genre-aventura'),
             'terror': $('#genre-terror'),
             'fantasia': $('#genre-fantasia')
-        };
+        }
 
         const genreMapping = {
             'Ação': genres.acao,
@@ -82,22 +83,94 @@ $(function() {
             'Aventura': genres.aventura,
             'Terror': genres.terror,
             'Fantasia': genres.fantasia
-        };
+        }
 
         $.each(movies, function(index, movie) {
-            const movieGenres = movie.genres.split(', ');
+            const movieGenres = movie.genres.split(', ')
             $.each(movieGenres, function(i, genre) {
                 if (genreMapping[genre]) {
-                    genreMapping[genre].append(`<li>${movie.title}</li>`);
+                    genreMapping[genre].append(`<li>${movie.title}</li>`)
                 }
-            });
-        });
+            })
+        })
     }
 
-    const $header = $('.header');
+    function initCarousel(movies) {
+        const popularMovies = movies.slice(0, 5)
+        const $carouselTrack = $('.carousel-track')
+        const $carouselContainer = $('.carousel')
+        let currentIndex = 0
+        const totalSlides = popularMovies.length
+        let autoplayInterval
+
+        $.each(popularMovies, function(index, movie) {
+            const slideHTML = `
+                <div class="carousel-slide ${!index ? 'active' : ''}" id="slide${index}">
+                    <img src="${movie.posterUrl}"/>
+                    <div class="carousel-content-container">
+                        <div class="carousel-content">
+                            <h3>${movie.title}</h3>
+                            <p>${movie.synopsis}</p>
+                            <a href="detalhes/?id=${movie.id}">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            `
+            $carouselTrack.append(slideHTML)
+        });
+
+        function goToSlide(index) {
+            //const newPosition = -index * 100
+            const newPosition = -((
+                $('.carousel-slide:not(.active)').width() * (index - 1)
+                + $('.carousel-slide.active').width() / 2)
+                + (parseFloat(getComputedStyle(document.documentElement).fontSize) * 20 + (index * 2)))
+                + $('.carousel-track').width() / 2 - $('.carousel-slide.active').width() / 2
+            $('.active').removeClass("active")
+            console.log(newPosition)
+            $carouselTrack.css('transform', `translateX(${newPosition}px)`)
+            $(`#slide${index}`).addClass("active")
+        }
+
+        function startAutoplay() {
+            //autoplayInterval = setInterval(function() {
+            //    $('.carousel-button.next').click()
+            //}, 5000)
+        }
+
+        function stopAutoplay() {
+            //clearInterval(autoplayInterval)
+        }
+
+
+        $('.carousel-button.next').on('click', function() {
+            currentIndex++
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0
+            }
+            goToSlide(currentIndex)
+        })
+
+        $('.carousel-button.prev').on('click', function() {
+            currentIndex--
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1
+            }
+            goToSlide(currentIndex)
+        })
+
+        $carouselContainer.on('mouseenter', stopAutoplay)
+        $carouselContainer.on('mouseleave', startAutoplay)
+
+        goToSlide(0)
+        goToSlide(0)
+        startAutoplay()
+    }
+
+    const $header = $('.header')
     
     $(window).on('scroll', function() {
-        const shouldBeScrolled = $(window).scrollTop() > 50;
-        $header.toggleClass('scrolled', shouldBeScrolled);
-    });
-});
+        const shouldBeScrolled = $(window).scrollTop() > 50
+        $header.toggleClass('scrolled', shouldBeScrolled)
+    })
+})
